@@ -49,20 +49,15 @@ python security_tool.py [OPTIONS] [TARGET]
 مثال کامل:
 bash
 # بررسی کامل یک دامنه
-python security_tool.py -a example.com
 
 # خروجی نمونه:
-https://i.imgur.com/XYZpQqD.png
 
 📊 نمونه خروجی‌ها
 1. اطلاعات WHOIS
-https://i.imgur.com/whois_sample.png
 
 2. رکوردهای DNS
-https://i.imgur.com/dns_sample.png
 
 3. هدرهای HTTP
-https://i.imgur.com/headers_sample.png
 
 🧠 موارد استفاده
 بررسی امنیتی اولیه وبسایت‌ها
