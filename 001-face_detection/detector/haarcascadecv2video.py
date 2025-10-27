@@ -30,4 +30,4 @@ def detect_faces_video(video_path):
 
     
 #Example Usage
-detect_faces_video('path/to/your/video.mp4')
+# detect_faces_video('path/to/your/video.mp4')

@@ -10,7 +10,7 @@ def detect_faces_image(image_path):
     img = cv2.imread(image_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-    
+
     print(f"Number of faces detected: {len(faces)} on the image")
 
     for (x, y, w, h) in faces:
