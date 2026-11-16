@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>OPERATION ECLIPSE // CAMPAIGN</title><link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div id="scanlines"></div><div id="vignette"></div>
+<header class="topbar">
+ <div class="brand"><span class="sigil">◈</span><div><b>OPERATION ECLIPSE</b><small>JOINT SPACE OPERATIONS // CAMPAIGN COMMAND</small></div></div>
+ <div class="header-tools"><button id="audio-toggle" class="audio-toggle" type="button">♫ AUDIO: OFF</button><div class="net"><i id="netdot"></i><span id="netstatus">CONNECTING</span></div></div>
+</header>
+<main>
+<section id="lobby" class="panel">
+ <div class="eyebrow">TACTICAL COMMAND INTERFACE // MULTI-PILOT AUTHORIZATION</div>
+ <h1>DEPLOYMENT <em>READY</em></h1><p class="intro">One squadron. Up to eight pilots. One shared battlefield.</p>
+ <div class="lobby-config">
+  <label>GAME MODE <select id="mode-select"><option value="solo">SOLO // 1 PILOT</option><option value="duo" selected>DUO // 2 PILOTS</option><option value="squadron">SQUADRON // UP TO 8</option></select></label>
+  <label>CALLSIGN <input id="callsign" maxlength="16" value="ECLIPSE PILOT" autocomplete="nickname"></label>
+  <label>STARFIGHTER <select id="ship-select"><option value="VANGUARD">VANGUARD // BALANCED</option><option value="PHANTOM">PHANTOM // HIGH SPEED</option><option value="TITAN">TITAN // HEAVY DAMAGE</option><option value="MEDIC">MEDIC // SUPPORT WING</option></select></label>
+ </div>
+ <div class="roster-head"><b>ACTIVE SQUADRON</b><span id="roster-count">0 / 8 PILOTS</span></div><div class="roster" id="roster"><div class="roster-empty">WAITING FOR PILOTS TO SCAN THE ROOM CODE</div></div>
+ <div class="connect"><div><b>ROOM ACCESS // LOCAL NETWORK</b><small>Scan from any phone or computer on the same Wi-Fi. Every scan creates a separate pilot.</small><div class="url" id="joinurl">Loading local address...</div><div class="room-id" id="roomid">ROOM: GENERATING</div></div><div class="qr-frame"><span class="qr-corner tl"></span><img id="qr" src="/qr.png" alt="Connection QR"><span class="qr-corner br"></span><small>SCAN // JOIN SQUADRON</small></div></div>
+ <button id="start" disabled>BEGIN OPERATION <span>▶</span></button>
+ <div class="footnote">LOCAL NETWORK ONLY // UP TO 8 PILOTS // NO INTERNET REQUIRED</div>
+</section>
+
+<section id="comic" class="story-screen hidden">
+ <div class="story-top"><span id="comic-tag">CAMPAIGN ARCHIVE</span><span id="comic-count">PAGE 01 / 03</span></div>
+ <div class="comic-title"><div class="eyebrow">OPERATION ECLIPSE // CLASSIFIED TRANSMISSION</div><h2 id="comic-title">THE FRONTIER GOES DARK</h2><p id="comic-location">ORBITAL FRONTIER</p></div>
+ <div class="comic-art" id="comic-art"><div class="comic-planet"></div><div class="comic-carrier"></div><div class="comic-fighter f1"></div><div class="comic-fighter f2"></div><div class="comic-beam"></div><div class="comic-caption">HELIOS COLONY // LAST KNOWN TRANSMISSION</div></div>
+ <div class="comic-copy"><p id="comic-text"></p><strong id="comic-speaker"></strong></div>
+ <div class="story-actions"><button class="secondary" id="comic-prev">◀ BACK</button><button id="comic-next">CONTINUE ▶</button></div>
+</section>
+
+<section id="gamewrap" class="hidden">
+ <div class="campaign-strip"><div><small>CAMPAIGN PROGRESS</small><b id="campaign-progress">01 / 03</b></div><div class="progress-track"><i id="progress-fill"></i></div><div><small>OPERATION</small><b id="mission-name">BROKEN PERIMETER</b></div></div>
+ <div class="gamebar"><span>OPERATION ECLIPSE <small>// LIVE COMBAT</small></span><span id="wave">WAVE 01</span><span id="score">SCORE 000000</span></div>
+ <div class="canvasframe"><canvas id="game" width="900" height="650"></canvas></div>
+ <div class="gamefoot"><div class="player-hud" id="player-hud"></div><span id="mission-objective">OBJECTIVE: DEFEND THE SECTOR</span></div><div class="loot-legend"><span>✚ HEALTH</span><span>✦ WEAPON</span><span>» RAPID FIRE</span><span>⬡ SHIELD</span></div>
+ <div class="mobile-controls" id="mobilecontrols"><div class="stick" id="stick"><div class="knob" id="knob"></div></div><div class="actions"><button id="fire">FIRE</button><button id="special">PULSE</button></div></div>
+</section>
+</main>
+
+<div id="result" class="modal hidden">
+ <div class="result-card"><div class="eyebrow" id="result-eyebrow">AFTER ACTION REPORT</div><h2 id="result-title">MISSION FAILED</h2><p id="result-subtitle">The squadron has been lost.</p>
+  <div class="result-stats"><div><small>TEAM SCORE</small><b id="final-score">000000</b></div><div><small>ENEMIES DESTROYED</small><b id="kill-count">00</b></div><div><small>CAMPAIGN PROGRESS</small><b id="story-progress">00%</b></div></div>
+  <div class="result-story" id="result-story"></div>
+  <div class="result-actions" id="result-actions"></div>
+ </div>
+</div>
+<script src="/assets/game.js"></script>
+</body></html>
